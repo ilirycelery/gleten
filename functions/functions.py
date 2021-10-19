@@ -1,11 +1,8 @@
-"""Funciones que van a ser ejecutadas en
-main y estan también en el indice (index)"""
-
 import os, platform
+op_sy = platform.system()
 
 #Function not indexed
 def clearConsole():
-	op_sy = platform.system()
 	if op_sy == "Windows":
 		os.system("cls")
 
@@ -14,12 +11,9 @@ def clearConsole():
 
 
 #makefile
-def makeFile(dirc, file, method, text):
-	if (dirc, file, method, text) == None:
-		pass
+def makeFile(dirc, file, text):
 	dirc = str(dirc)
 	file = str(file)
-	method = str(method)
 	text = text or text
 	f=open(dirc+"/"+file, "w")
 	f.write(text+os.linesep)
@@ -33,10 +27,25 @@ def makeDir(dirc):
 	os.mkdir(dirc)
 	print("Directory <"+dirc+"> created!")
 
-def makeInput():
-	pass
-
 def ubication():
 	ubication_sys = os.listdir()
 	ubication_sys = str(ubication_sys)
 	print(ubication_sys)
+
+def moveFile(initial_dir, final_dir):
+	file_to_move = input("arrastra el archivo a mover aquí: ")
+	destiny = input("arrastra aqui la carpeta de destino: ")
+
+def removeFile(file_to_remove):
+	if op_sy == "Windows":
+		os.system("DEL /F /A "+file_to_remove)
+
+	else:
+		os.system("rm "+file_to_remove)
+
+def removeDir(dir_to_remove):
+	if op_sy == "Windows":
+		os.system("rmdir "+dir_to_remove)
+
+	else:
+		os.system("rmdir "+dir_to_remove)
