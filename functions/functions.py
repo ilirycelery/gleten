@@ -27,11 +27,6 @@ def makeDir(dirc):
 	os.mkdir(dirc)
 	print("Directory <"+dirc+"> created!")
 
-def ubication():
-	ubication_sys = os.listdir()
-	ubication_sys = str(ubication_sys)
-	print(ubication_sys)
-
 def moveFile(initial_dir, final_dir):
 	file_to_move = input("arrastra el archivo a mover aquí: ")
 	destiny = input("arrastra aqui la carpeta de destino: ")
